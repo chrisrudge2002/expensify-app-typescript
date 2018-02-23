@@ -1,5 +1,5 @@
 import { shallow, ShallowWrapper } from "enzyme";
-import * as moment from "moment";
+import moment from "../__mocks__/mock-moment";
 import * as React from "react";
 import { ExpenseListFilters } from "../../components/ExpenseListFilters";
 import IFilterState from "../../interfaces/IFilterState";
@@ -62,7 +62,7 @@ test("should sort by date", () => {
 test("should handle date changes", () => {
     const startDate = moment(0).add(4, "years");
     const endDate = moment(0).add(8, "years");
-    const fn: ({ startDate, endDate }: { startDate: moment.Moment | null, endDate: moment.Moment | null }) => void =
+    const fn: ({ startDate, endDate }: { startDate: any | null, endDate: any | null }) => void =
         wrapper.find("withStyles(DateRangePicker)").prop("onDatesChange");
     fn({ startDate, endDate });
     expect(setStartDate).toHaveBeenLastCalledWith(startDate);

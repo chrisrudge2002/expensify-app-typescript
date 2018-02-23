@@ -1,4 +1,4 @@
-import * as moment from "moment";
+import moment from "../__mocks__/mock-moment";
 
 export default [{
     amount: 195,

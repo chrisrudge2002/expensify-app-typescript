@@ -1,4 +1,4 @@
-import * as moment from "moment";
+import moment from "../__mocks__/mock-moment";
 import IExpense from "../../interfaces/IExpense";
 import IFilterState from "../../interfaces/IFilterState";
 import selectExpenses from "../../selectors/expenses";

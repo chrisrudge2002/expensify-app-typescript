@@ -6,6 +6,7 @@ import IExpense from "../interfaces/IExpense";
 interface IExpenseFormProps extends React.Props<ExpenseForm> {
     expense?: IExpense | undefined;
     onFormSubmit?: (expense: IExpense) => void;
+    now?: moment.Moment;
 }
 
 interface IExpenseFormState {
@@ -24,7 +25,7 @@ class ExpenseForm extends React.Component<IExpenseFormProps, IExpenseFormState> 
         this.state = {
             amount: props.expense ? (props.expense.amount / 100).toString() : "",
             calendarFocused: false,
-            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+            createdAt: props.now ? props.now : (props.expense ? moment(props.expense.createdAt) : moment()),
             description: props.expense ? props.expense.description : "",
             error: "",
             note: props.expense ? props.expense.note : "",
