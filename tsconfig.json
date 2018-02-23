@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "outDir": "./public/",                              // path to output directory
+        "sourceMap": true,                                  // allow sourcemap support
+        "strictNullChecks": true,                           // enable strict null checks as a best practice
+        "module": "es6",                                    // specifiy module code generation
+        "jsx": "react",                                     // use typescript to transpile jsx to js
+        "target": "es5",                                    // specify ECMAScript target version
+        "allowJs": true,                                    // allow a partial TypeScript and JavaScript codebase 
+        "noImplicitAny": true,                              // raise error on expressions and declarations with an implied any type
+        "strict": true,                                     // enable all strict type checking options
+        "noUnusedLocals": true,                             // report errors on unused locals
+        "noImplicitReturns": true,                          // report error when not all code paths in function return a value
+        "noUnusedParameters": true,                         // report errors on unused parameters
+        "lib": [ "es2015", "dom" ],                         // list of library files to be included in the compilation
+        "forceConsistentCasingInFileNames": true,           // disallow inconsistently-cased references to the same file
+        "moduleResolution": "node",                         // determine how modules get resolved
+        "noFallthroughCasesInSwitch": true,                 // report errors for fallthrough cases in switch statement.
+        "noImplicitThis": true,                             // raise error on this expressions with an implied any type
+        "strictFunctionTypes": true,                        // disable bivariant parameter checking for function types.
+    },
+    "include": [
+        "./src/"
+    ]
+}
