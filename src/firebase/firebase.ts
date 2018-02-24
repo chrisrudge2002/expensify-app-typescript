@@ -1,5 +1,4 @@
 import * as firebase from "firebase";
-import "firebase/database";
 
 const config = {
     apiKey: "AIzaSyDQVN0aOjEY56ZrGWTux215ANvkmSIlhDg",
@@ -13,6 +12,7 @@ const config = {
 firebase.initializeApp(config);
 
 const database: firebase.database.Database = firebase.database();
+const githubAuthProvider = new firebase.auth.GithubAuthProvider();
 const googleAuthProivder = new firebase.auth.GoogleAuthProvider();
 
-export { firebase, googleAuthProivder, database as default };
+export { firebase, githubAuthProvider, googleAuthProivder, database as default };

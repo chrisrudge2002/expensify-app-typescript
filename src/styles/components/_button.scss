@@ -10,6 +10,12 @@
     text-decoration: none;
 }
 
+.button--alt {
+    @extend .button;
+
+    margin-top: $s-size;
+}
+
 .button--link {
     background: none;
 }

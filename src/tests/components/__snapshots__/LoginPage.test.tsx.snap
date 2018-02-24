@@ -19,6 +19,12 @@ exports[`should render LoginPage component correctly 1`] = `
       className="button"
       onClick={[MockFunction]}
     >
+      Login with GitHub
+    </button>
+    <button
+      className="button button--alt"
+      onClick={[MockFunction]}
+    >
       Login with Google
     </button>
   </div>

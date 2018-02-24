@@ -23,3 +23,8 @@ export const filterActionTypes = {
     SORT_BY_AMOUNT: "SORT_BY_AMOUNT",
     SORT_BY_DATE: "SORT_BY_DATE",
 };
+
+export const loginTypes = {
+    GITHUB: "GITHUB",
+    GOOGLE: "GOOGLE",
+};

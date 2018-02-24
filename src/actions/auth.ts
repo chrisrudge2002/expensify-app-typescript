@@ -1,8 +1,9 @@
 import { authActionTypes } from "./types";
 
-export const startLogin = () => {
+export const startLogin = (loginType: string) => {
     return {
         type: authActionTypes.START_LOGIN,
+        loginType
     };
 };
 

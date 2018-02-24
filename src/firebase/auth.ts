@@ -1,6 +1,11 @@
-import { firebase, googleAuthProivder } from "./firebase";
+import { firebase, githubAuthProvider, googleAuthProivder } from "./firebase";
 
-export const login = async () => {
+export const loginWithGitHub = async () => {
+    const ret = await firebase.auth().signInWithPopup(githubAuthProvider);
+    return ret.user.uid;
+};
+
+export const loginWithGoogle = async () => {
     const ret = await firebase.auth().signInWithPopup(googleAuthProivder);
     return ret.user.uid;
 };
