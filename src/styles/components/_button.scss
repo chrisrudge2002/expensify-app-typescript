@@ -10,9 +10,7 @@
     text-decoration: none;
 }
 
-.button--alt {
-    @extend .button;
-
+.button--login-alt {
     margin-top: $s-size;
 }
 
@@ -22,4 +20,14 @@
 
 .button--secondary {
     background: #888;
+}
+
+.button--confirm-yes {
+    margin-right: $s-size;
+    width: $confirm-button-size;
+}
+
+.button--confirm-no {
+    margin-left: $s-size;
+    width: $confirm-button-size;
 }

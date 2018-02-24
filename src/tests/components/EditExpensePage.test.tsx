@@ -33,9 +33,3 @@ test("should handle onSubmit (edit expense)", () => {
     expect(history.push).toHaveBeenLastCalledWith("/");
     expect(startEditExpense).toHaveBeenLastCalledWith(expenses[1].id, expenses[1]);
 });
-
-test("should handle onRemove (remove expense)", () => {
-    wrapper.find("button").simulate("click");
-    expect(history.push).toHaveBeenLastCalledWith("/");
-    expect(startRemoveExpense).toHaveBeenLastCalledWith(expenses[1].id);
-});

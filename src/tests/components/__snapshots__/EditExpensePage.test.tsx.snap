@@ -36,5 +36,16 @@ exports[`should render EditExpensePage correctly 1`] = `
       Remove Expense
     </button>
   </div>
+  <Connect(ConfirmationModal)
+    description="Rent"
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
+    id="2"
+    isOpen={false}
+    onCancelRemoval={[Function]}
+  />
 </div>
 `;

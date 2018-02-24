@@ -15,7 +15,7 @@ export const LoginPage: React.SFC<ILoginPageProps> = ({ startLoginGitHub, startL
             <h1 className="box-layout__title">Expensify</h1>
             <p>It's time to get your expenses under control.</p>
             <button className="button" onClick={startLoginGitHub}>Login with GitHub</button>
-            <button className="button button--alt" onClick={startLoginGoogle}>Login with Google</button>
+            <button className="button button--login-alt" onClick={startLoginGoogle}>Login with Google</button>
         </div>
     </div>
 );

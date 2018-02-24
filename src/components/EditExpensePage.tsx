@@ -6,15 +6,25 @@ import * as expenseActions from "../actions/expenses";
 import IAppState from "../interfaces/IAppState";
 import IExpense from "../interfaces/IExpense";
 import ExpenseForm from "./ExpenseForm";
+import ConfirmationModal from "./ConfirmationModal";
 
 interface IEditExpensePageProps extends RouteComponentProps<any> {
     expense: IExpense;
-    history: any;
     startEditExpense: (id: string, updates: {} ) => AnyAction;
-    startRemoveExpense: (id: string) => AnyAction;
 }
 
-export class EditExpensePage extends React.Component<IEditExpensePageProps> {
+interface IEditExpensePageState {
+    confirmModalIsOpen: boolean;
+}
+
+export class EditExpensePage extends React.Component<IEditExpensePageProps, IEditExpensePageState> {
+    constructor(props: IEditExpensePageProps) {
+        super(props);
+
+        this.state = {
+            confirmModalIsOpen: false,
+        };
+    }
     public render() {
         return (
             <div>
@@ -31,8 +41,17 @@ export class EditExpensePage extends React.Component<IEditExpensePageProps> {
                             Remove Expense
                     </button>
                 </div>
+                <ConfirmationModal 
+                    id={this.props.expense.id}
+                    description={this.props.expense.description}
+                    isOpen={this.state.confirmModalIsOpen}
+                    onCancelRemoval={this.onCancelRemoval}
+                    history={this.props.history} />
             </div>
         );
+    }
+    private onCancelRemoval = () => {
+        this.setState(() => ({ confirmModalIsOpen: false }));
     }
     private onSubmit = (expense: IExpense) => {
         if (this.props.expense.id) {
@@ -42,8 +61,7 @@ export class EditExpensePage extends React.Component<IEditExpensePageProps> {
     }
     private onRemove = () => {
         if (this.props.expense.id) {
-            this.props.startRemoveExpense(this.props.expense.id);
-            this.props.history.push("/");
+            this.setState(() => ({ confirmModalIsOpen: true }));
         }
     }
 }
@@ -55,7 +73,6 @@ const mapStateToProps = (state: IAppState, props: IEditExpensePageProps) => ({
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => ({
     startEditExpense: (id: string, expense: IExpense) =>
         (dispatch(expenseActions.startEditExpense(id, expense)) as AnyAction),
-    startRemoveExpense: (id: string) => (dispatch(expenseActions.startRemoveExpense(id)) as AnyAction),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
