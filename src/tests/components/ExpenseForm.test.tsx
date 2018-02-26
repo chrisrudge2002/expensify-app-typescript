@@ -1,8 +1,8 @@
 import { shallow } from "enzyme";
-import moment from "../__mocks__/mock-moment";
 import * as React from "react";
 import ExpenseForm from "../../components/ExpenseForm";
 import IExpense from "../../interfaces/IExpense";
+import moment from "../__mocks__/mock-moment";
 import expenses from "../fixtures/expenses";
 
 let now: any;
@@ -84,7 +84,6 @@ test("should call onSubmit prop for valid form submission", () => {
 });
 
 test("should set new date on date change", () => {
-    const now = moment();
     const wrapper = shallow(<ExpenseForm now={now} />);
     const fn: (moment: any) => void = wrapper.find("withStyles(SingleDatePicker)").prop("onDateChange");
     if (!!fn) {

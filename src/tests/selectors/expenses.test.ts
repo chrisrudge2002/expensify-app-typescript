@@ -1,7 +1,7 @@
-import moment from "../__mocks__/mock-moment";
 import IExpense from "../../interfaces/IExpense";
 import IFilterState from "../../interfaces/IFilterState";
 import selectExpenses from "../../selectors/expenses";
+import moment from "../__mocks__/mock-moment";
 import expenses from "../fixtures/expenses";
 
 test("should filter by text value", () => {

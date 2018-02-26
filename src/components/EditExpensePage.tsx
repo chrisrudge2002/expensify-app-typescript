@@ -5,8 +5,8 @@ import { AnyAction, Dispatch } from "redux";
 import * as expenseActions from "../actions/expenses";
 import IAppState from "../interfaces/IAppState";
 import IExpense from "../interfaces/IExpense";
-import ExpenseForm from "./ExpenseForm";
 import ConfirmationModal from "./ConfirmationModal";
+import ExpenseForm from "./ExpenseForm";
 
 interface IEditExpensePageProps extends RouteComponentProps<any> {
     expense: IExpense;
@@ -41,7 +41,7 @@ export class EditExpensePage extends React.Component<IEditExpensePageProps, IEdi
                             Remove Expense
                     </button>
                 </div>
-                <ConfirmationModal 
+                <ConfirmationModal
                     id={this.props.expense.id}
                     description={this.props.expense.description}
                     isOpen={this.state.confirmModalIsOpen}

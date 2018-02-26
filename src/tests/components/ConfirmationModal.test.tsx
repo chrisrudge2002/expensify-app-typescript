@@ -1,8 +1,8 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
 import { ConfirmationModal } from "../../components/ConfirmationModal";
-import expenses from "../fixtures/expenses";
 import IExpense from "../../interfaces/IExpense";
+import expenses from "../fixtures/expenses";
 
 let onCancelRemoval: jest.Mock; let startRemoveExpense: jest.Mock;
 let history: { push: jest.Mock };
@@ -12,11 +12,11 @@ beforeEach(() => {
     history = { push: jest.fn() };
     onCancelRemoval = jest.fn();
     startRemoveExpense = jest.fn();
-    wrapper = shallow(<ConfirmationModal 
+    wrapper = shallow(<ConfirmationModal
         id={(expenses as IExpense[])[1].id}
         description={(expenses as IExpense[])[1].description}
         isOpen={true}
-        onCancelRemoval={onCancelRemoval} 
+        onCancelRemoval={onCancelRemoval}
         startRemoveExpense={startRemoveExpense}
         history={history}
     />);
@@ -36,4 +36,3 @@ test("should handle onRemove (remove expense)", () => {
     expect(history.push).toHaveBeenCalledWith("/");
     expect(startRemoveExpense).toHaveBeenLastCalledWith(expenses[1].id);
 });
-

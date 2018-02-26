@@ -1,8 +1,8 @@
 import { shallow, ShallowWrapper } from "enzyme";
-import moment from "../__mocks__/mock-moment";
 import * as React from "react";
 import { ExpenseListFilters } from "../../components/ExpenseListFilters";
 import IFilterState from "../../interfaces/IFilterState";
+import moment from "../__mocks__/mock-moment";
 import { altFilters, filters } from "../fixtures/filters";
 
 let setTextFilter: jest.Mock; let sortByAmount: jest.Mock; let sortByDate: jest.Mock;

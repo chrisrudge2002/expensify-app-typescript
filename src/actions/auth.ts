@@ -2,8 +2,8 @@ import { authActionTypes } from "./types";
 
 export const startLogin = (loginType: string) => {
     return {
+        loginType,
         type: authActionTypes.START_LOGIN,
-        loginType
     };
 };
 

@@ -8,7 +8,7 @@ let wrapper: ShallowWrapper<React.Component>;
 beforeEach(() => {
     startLoginGitHub = jest.fn();
     startLoginGoogle = jest.fn();
-    wrapper = shallow(<LoginPage 
+    wrapper = shallow(<LoginPage
                             startLoginGitHub={startLoginGitHub}
                             startLoginGoogle={startLoginGoogle} />);
 });

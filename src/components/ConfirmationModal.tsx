@@ -1,7 +1,7 @@
 import * as React from "react";
+import * as Modal from "react-modal";
 import { connect } from "react-redux";
 import { AnyAction, Dispatch } from "redux";
-import * as Modal from "react-modal";
 import * as expenseActions from "../actions/expenses";
 
 interface IConfirmationModalProps {
