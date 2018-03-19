@@ -6,11 +6,13 @@ import expenses from "../fixtures/expenses";
 
 let startAddExpense: jest.Mock; let history: { push: jest.Mock };
 let wrapper: ShallowWrapper<React.Component>;
+let rcp: any;
 
 beforeEach(() => {
+    rcp = {};
     startAddExpense = jest.fn();
     history = { push: jest.fn() };
-    wrapper = shallow(<AddExpensePage startAddExpense={startAddExpense} history={history} />);
+    wrapper = shallow(<AddExpensePage {...rcp} startAddExpense={startAddExpense} history={history} />);
 });
 
 test("should render AddExpensePage correctly", () => {
